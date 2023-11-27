@@ -1,0 +1,10 @@
+se inserta schedule --> true
+se inserta SPORT --> true
+se inserta war --> true
+se inserta man --> true
+se inserta deal --> true
+se inserta PhAnToM --> true
+se inserta weather --> true
+se inserta Skull --> true
+----- CONJUNTO DE PALABRAS DEL ARBOL -------
+[deal, man, phantom, schedule, skull, sport, war, weather]

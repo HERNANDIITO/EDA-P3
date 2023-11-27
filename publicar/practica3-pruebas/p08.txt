@@ -1,0 +1,9 @@
+WRONG WORDS (NORMALIZED)
+United nice 0.3
+off of 0.2
+yeats years 0.1
+liwise likewise 0.1429
+apea appear 0.2
+litle little 0.0909
+roasf road 0.2222
+stori stories 0.1667

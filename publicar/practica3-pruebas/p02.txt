@@ -1,0 +1,21 @@
+se inserta schedule --> true
+se inserta sport --> true
+se inserta war --> true
+se inserta man --> true
+se inserta deal --> true
+se inserta weather --> true
+se inserta food --> true
+se inserta apple --> true
+se inserta pumpkin --> true
+se inserta phantom --> true
+----- ARBOL -------
+apple *
+deal *
+food *
+man *
+phantom *
+pumpkin *
+schedule *
+sport *
+war *
+weather *

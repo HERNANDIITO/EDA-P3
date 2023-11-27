@@ -1,0 +1,21 @@
+el id 13 no se inserta con skull
+el id 19 no se inserta con skull
+el id 21 no se inserta con skull
+----- ARBOL -------
+inserta skull -> true
+inserta schedule -> true
+inserta sport -> true
+inserta war -> true
+inserta man -> true
+inserta deal -> true
+inserta weather -> true
+inserta phantom -> true
+----- ARBOL -------
+deal * 1 - 2 - 7 - 11 - 13 - 15
+man * 2 - 3 - 4 - 6 - 7 - 9 - 21
+phantom * 10 - 14 - 16
+schedule * 1 - 2 - 5 - 8 - 12 - 15 - 20 - 22
+skull * 10 - 14 - 16
+sport *
+war * 1 - 3 - 4 - 6 - 8 - 13 - 20
+weather * 13 - 19 - 21
