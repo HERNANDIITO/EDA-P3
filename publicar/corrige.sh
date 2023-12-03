@@ -1,5 +1,4 @@
 #! /bin/bash
-
 tempo=10
 total=0
 diferencias=""
@@ -11,9 +10,7 @@ cantidad=$(ls *.java 2>/dev/null |wc -l)
 numfuentes=0
 nota=0
 rm -rf *.tmp  $directorio/*.tmp $directorio/*.terr *.class $directorio/*.class $directorio/*.tmp.err
-
 function genMata() {
-
 if ! test -x mata ; then  # si ya existe no se genera
 echo "#include <stdlib.h>
 #include <sys/time.h>

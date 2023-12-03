@@ -19,12 +19,11 @@ public class IndexTree {
     public boolean insert( String word ) {
         if ( word == null || word.isEmpty() ) { return false; }
         if ( tree.containsKey(word) ) { return false; }
-        boolean inserted = false;
 
         TreeSet<Integer> valueAux = new TreeSet<>();
         tree.put(word.toLowerCase(), valueAux);
 
-        return inserted;
+        return true;
     }
 
     public boolean insertId( String word, int id ) {
@@ -101,18 +100,23 @@ public class IndexTree {
 
     public String toString() {
         String result = "";
+
         for (String key : tree.keySet()) {
-            result += (key + " *");
+            String keyString = "";
+            
+            keyString += (key + " *");
+            
             for (int id : tree.get(key)) {
-                result += " " + id + " -";
+                keyString += " " + id + " -";
             }
+            
+            if ( keyString.endsWith("-") ) {
+                keyString = keyString.substring(0, keyString.length() - 1);
+            }
+            
+            result += keyString += '\n';
         }
 
-        if ( result.isEmpty() ) { return result; }
-
-        if (result.endsWith("-")) {
-            result = result.substring(0, result.length() - 1);
-        }
 
         return result;
     }
@@ -121,9 +125,21 @@ public class IndexTree {
 
         if ( comp ==  null ) { return; }
 
-        for (Document doc : comp.getDocuments()) {
-            
+        for (String word : comp.getDictionary()) {
+            TreeSet<Integer> IDs = new TreeSet<>();
+
+            for (Document doc : comp.getDocuments()) {
+                if ( doc.search(word) ) {
+                    IDs.add(doc.getId());
+                }
+            }
+
+            if ( tree.containsKey(word) ) {
+                tree.get(word).addAll(IDs);
+            } else {
+                tree.put(word, IDs);
+            }
+
         }
-        
     }
 }

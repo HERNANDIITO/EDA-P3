@@ -98,7 +98,7 @@ public class Document {
      * @return this.general
      */
     public String toString(){
-        String result = id + " - " + category + "\n";
+        String result = id + "-" + category + "\n";
         for (Card card : general) {
             result += card.toString() + "\n"; 
         }

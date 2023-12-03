@@ -18,14 +18,14 @@ public class Compendium {
     public String replaceSepCharacs( String line ) {
         String result = line;
 
-        result.replace(',', ' ');
-        result.replace(':', ' ');
-        result.replace(';', ' ');
-        result.replace('?', ' ');
-        result.replace('!', ' ');
-        result.replace('.', ' ');
-        result.replace('(', ' ');
-        result.replace(')', ' ');
+        result = result.replace(',', ' ');
+        result = result.replace(':', ' ');
+        result = result.replace(';', ' ');
+        result = result.replace('?', ' ');
+        result = result.replace('!', ' ');
+        result = result.replace('.', ' ');
+        result = result.replace('(', ' ');
+        result = result.replace(')', ' ');
 
         return result;
     }
@@ -81,10 +81,17 @@ public class Compendium {
                 }
 
                 line = replaceSepCharacs(line);
+                line = line.replace("  ", " ");
+                line = line.strip();
+                line = line.trim();
+
                 String[] words = line.split(" ");
+
                 for (String word : words) {
+                    if ( word.isEmpty() ) { continue; }
+                    word = word.toLowerCase();
+
                     if ( workingOnDic ) {
-                        System.out.println(word);
                         this.dictionary.add(word);
                     } else {
                         this.documents.get(idCurrentDoc - 1).addCard(word);
