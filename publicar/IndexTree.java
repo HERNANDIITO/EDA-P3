@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeMap;
@@ -8,7 +7,6 @@ public class IndexTree {
     private TreeMap<String, TreeSet<Integer>> tree;
 
     public IndexTree() {
-        // TreeMap<clave, valor>
         tree = new TreeMap<String, TreeSet<Integer>>();
     }
 
