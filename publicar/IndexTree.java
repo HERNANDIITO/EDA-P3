@@ -6,6 +6,9 @@ import java.util.TreeSet;
 public class IndexTree {
     private TreeMap<String, TreeSet<Integer>> tree;
 
+    /**
+     * Inicializa la variable de instancia
+     */
     public IndexTree() {
         tree = new TreeMap<String, TreeSet<Integer>>();
     }
