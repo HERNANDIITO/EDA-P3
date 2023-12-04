@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class ErrorCorrector {
     public static void main(String[] args) {
 
@@ -14,13 +17,7 @@ public class ErrorCorrector {
         }
 
         char mode = args[0].charAt(0);
-
-        Compendium toCorrect = new Compendium();
-        toCorrect.readFile(args[1]);
         
-        Compendium base = new Compendium();
-        base.readFile(args[2]);
-
 
     }
 
@@ -35,35 +32,47 @@ public class ErrorCorrector {
         }
     }
 
+    public static int min( int num1, int num2, int num3 ) {
+        ArrayList<Integer> nums = new ArrayList<>();
+        nums.add(num1); nums.add(num2); nums.add(num3);
+        return Collections.min(nums);
+    }
+
     public static int getDistance( String word1, String word2 ) {
         int distance = 0;
 
         if ( word1 == null || word2 == null ) { return distance; }
         if ( word1.equals(word2) ) { return distance; }
 
-        int n = word1.length();
-        int m = word2.length();
+        int X = word1.length() + 1;
+        int Y = word2.length() + 1;
 
-        int[][] matrix = new int[n][m];
-
-        for (int i = 0; i < matrix[0].length; i++) {
-            matrix[0][i] = i;
-        }
-
+        if ( X == 0 ) { return Y; }
+        if ( Y == 0 ) { return X; }
+ 
+        int[][] matrix = new int[X][Y];
+        
+        // --- X ---
         for (int i = 0; i < matrix.length; i++) {
             matrix[i][0] = i;
         }
 
+        // --- Y ---
+        for (int i = 0; i < matrix[0].length; i++) {
+            matrix[0][i] = i;
+        }
+
         for (int i = 1; i < matrix.length; i++) {
             for (int j = 1; j < matrix[i].length; j++) {
-                if ( word1.charAt(i) == word2.charAt(j) ) {
-                    matrix[i][j] = 0;
+                if ( word1.charAt(i - 1) == word2.charAt(j - 1) ) {
+                    matrix[i][j] = min(matrix[i-1][j] + 1, matrix[i-1][j-1], matrix[i][j-1] + 1);
+                    continue;
                 }
 
-                
+                matrix[i][j] = min(matrix[i-1][j] + 1, matrix[i-1][j-1] + 1, matrix[i][j-1] + 1);
             }
         }
 
-        return distance;
+        return matrix[matrix.length][matrix[0].length];
     }
 }
