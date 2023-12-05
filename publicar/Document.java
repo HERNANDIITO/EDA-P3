@@ -7,7 +7,7 @@ public class Document {
 
     /**
      * @param idParam: ID del documento
-     * @param wordParam: Categoría del documento
+     * @param wordParam: Categoria del documento
      */
     public Document( int idParam, String wordParam ){
         id = idParam;

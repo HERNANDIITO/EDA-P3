@@ -26,6 +26,9 @@ public class Compendium {
         result = result.replace('.', ' ');
         result = result.replace('(', ' ');
         result = result.replace(')', ' ');
+        result = result.replace("  ", " ");
+        result = result.strip();
+        result = result.trim();
 
         return result;
     }
