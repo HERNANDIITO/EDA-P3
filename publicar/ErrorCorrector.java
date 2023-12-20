@@ -1,3 +1,5 @@
+// DNI 24504004T HERNANDEZ GARCIA, PABLO 
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
@@ -69,7 +71,7 @@ public class ErrorCorrector {
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("An error occurred.");
+            System.out.println(e);
             e.printStackTrace();
             
         }

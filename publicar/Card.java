@@ -1,3 +1,5 @@
+// DNI 24504004T HERNANDEZ GARCIA, PABLO 
+
 public class Card {
     private String word;
     private int frequency;
